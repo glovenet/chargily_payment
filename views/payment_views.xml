@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <!-- Add the Chargily payment option to the checkout page -->
+        <template id="payment_chargily_form" inherit_id="website_sale.payment" customize_show="True" name="Chargily Payment Form">
+            <xpath expr="//div[@id='payment_method']" position="inside">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <input type="radio" t-att-value="'chargily'" t-att-name="'acquirer_id'" id="acquirer_chargily" t-att-checked="payment.acquirer_id.provider == 'chargily'"/>
+                                <label for="acquirer_chargily">Chargily</label>
+                            </h4>
+                        </div>
+                        <div class="panel-body">
+                            <p>Pay securely using Chargily.</p>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>
